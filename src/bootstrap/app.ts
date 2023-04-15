@@ -1,4 +1,5 @@
 import { Container } from '../services/Container/Container.js'
+import { Route } from '../services/Route/Route.js'
 
 (async function () {
 
@@ -14,5 +15,7 @@ import { Container } from '../services/Container/Container.js'
     */
 
     global.app = new Container()
+
+    await app.singleton('Route', async () => new Route())
 
 })()
