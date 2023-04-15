@@ -1,0 +1,13 @@
+.vs
+.idea
+.env
+
+appsettings.json
+local.settings.json
+
+node_modules
+dist
+
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
