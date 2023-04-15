@@ -1,5 +1,6 @@
 import { Container } from '../services/Container/Container.js'
 import { Route } from '../services/Route/Route.js'
+import registerApiRoutes from '../routes/api.js'
 
 (async function () {
 
@@ -17,5 +18,20 @@ import { Route } from '../services/Route/Route.js'
     global.app = new Container()
 
     await app.singleton('Route', async () => new Route())
+
+    /*
+    |--------------------------------------------------------------------------
+    | Register Routes And Handlers
+    |--------------------------------------------------------------------------
+    |
+    | Next, we load the routes defined in "api.ts" and their corresponding
+    | handlers. This instructs the Azure Functions Runtime what to do when
+    | the corresponding events are triggered.
+    |
+    */
+
+    registerApiRoutes(await app.make('Route'))
+    // registerQueueHandlers()
+    // ...
 
 })()
