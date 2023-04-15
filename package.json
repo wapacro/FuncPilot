@@ -1,7 +1,7 @@
 {
   "name": "func-pilot",
   "version": "1.0.0",
-  "main": "dist/src/functions/*.js",
+  "main": "dist/src/bootstrap/app.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
