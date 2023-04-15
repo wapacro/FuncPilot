@@ -1,5 +1,6 @@
 import { Container } from '../services/Container/Container.js'
 import { Route } from '../services/Route/Route.js'
+import { CacheManager } from '../services/Cache/CacheManager.js'
 import registerApiRoutes from '../routes/api.js'
 
 (async function () {
@@ -18,6 +19,7 @@ import registerApiRoutes from '../routes/api.js'
     global.app = new Container()
 
     await app.singleton('Route', async () => new Route())
+    await app.singleton('Cache', async () => new CacheManager())
 
     /*
     |--------------------------------------------------------------------------
