@@ -35,7 +35,7 @@ export class Route {
     }
 
     protected getFunctionNameByRoute(pattern: string, methods: HttpMethod[]): string {
-        return `${methods.join('-')}-${pattern.replaceAll('/', '-').replaceAll(/[{}]/g, '')}`
+        return `${methods.join('-')}-${pattern.replaceAll('/', '-').replaceAll(/[{}.]/g, '')}`
     }
 
     protected getAzureFunctionHandler(handler: RouteHandler): HttpHandler {
