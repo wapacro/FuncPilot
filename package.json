@@ -11,12 +11,12 @@
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
-    "@azure/functions": "^4.0.0-alpha.1",
+    "@azure/functions": "^4.6.1",
     "node-cache": "^5.1.2"
   },
   "devDependencies": {
-    "@types/node": "18.x",
+    "@types/node": "22.x",
     "azure-functions-core-tools": "^4.x",
-    "typescript": "^5.0.4"
+    "typescript": "^5.7.3"
   }
 }
