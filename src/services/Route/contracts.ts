@@ -1,9 +1,10 @@
-import type { BaseController } from '../../app/Http/Controllers/BaseController.js'
 import type { FunctionInput, FunctionOutput, HttpRequest, HttpResponseInit, InvocationContext, } from '@azure/functions'
+
+export type Constructor<T> = new (...args: any[]) => T
 
 export type RouteHandler =
     ((request: HttpRequest, context: InvocationContext) => Promise<HttpResponseInit>)
-    | [BaseController, string]
+    | [Constructor<any>, string?]
 
 export interface RouteOptions {
     name?: string

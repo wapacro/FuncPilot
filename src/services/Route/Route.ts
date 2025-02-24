@@ -39,14 +39,14 @@ export class Route {
     }
 
     protected getAzureFunctionHandler(handler: RouteHandler): HttpHandler {
-        if (typeof handler !== 'object') {
+        if (typeof handler === 'function') {
             return handler
         }
 
         let [controller, method] = handler
         return async (request: HttpRequest, context: InvocationContext): Promise<HttpResponseInit> => {
             // @ts-ignore
-            return controller[method](request, context)
+            return (new controller)[method ?? 'handle'](request, context)
         }
     }
 }
