@@ -1,8 +1,6 @@
 <img align="left" width="300" src="https://user-images.githubusercontent.com/11590853/232176109-a2a3a733-2651-4a7d-9cc0-c363f58bc192.png">
 
-**FuncPilot** is a project brought to life by the recently published Version 4 of
-the [Node Programming Model in Azure Functions](https://techcommunity.microsoft.com/t5/apps-on-azure-blog/azure-functions-version-4-of-the-node-js-programming-model-is-in/ba-p/3773541)
-(currently in public preview). Thanks to the improvements in the new programming model, this project aims to provide a
+**FuncPilot** is a project brought to life by the introduction of the new [Node Programming Model in Azure Functions](https://techcommunity.microsoft.com/blog/appsonazureblog/azure-functions-node-js-v4-programming-model-is-generally-available/3929217). Thanks to the improvements in the new programming model, this project aims to provide a
 solid structure for your Node function apps written in TypeScript while offering frequently used services and components
 with a first-class developer experience, inspired and known from great frameworks
 like [Laravel](https://laravel.com), [Adonis](https://adonisjs.com) and similar.
@@ -28,12 +26,12 @@ installed and configured. Once you are ready:
 3. Define the routes aka functions within your Function App in the provided routes file under `src/routes/api.ts`
    ```typescript
    export default function (route: Route) {
-     route.get('/hello', [new HelloController, 'index'])
+     route.get('/hello', [HelloController, 'index'])
    }
    ```
 4. Create corresponding controllers under `src/app/Http/Controllers` to handle invocations of your functions
    ```typescript
-   export class HelloController extends BaseController {
+   export default class HelloController extends BaseController {
     
      public async index(request: HttpRequest): Promise<HttpResponseInit> {
        const name = request.query.get('name')
