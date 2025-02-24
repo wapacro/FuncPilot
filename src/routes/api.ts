@@ -1,4 +1,4 @@
-import { Route } from '../services/Route/Route.js'
+import Route from '../services/Route/Route.js'
 import HelloController from '../app/Http/Controllers/HelloController.js'
 
 export default function (route: Route) {

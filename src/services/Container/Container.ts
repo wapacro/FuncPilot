@@ -1,7 +1,7 @@
 import type { ContainerElement } from './contracts.js'
 import { UnresolvedBinding } from './exceptions.js'
 
-export class Container {
+export default class Container {
     protected container: Map<string, ContainerElement> = new Map()
 
     public async register(name: string, instance: () => Promise<any>, singleton: boolean = false): Promise<void> {

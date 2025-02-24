@@ -1,4 +1,4 @@
-import { BaseController } from './BaseController.js'
+import BaseController from './BaseController.js'
 import { HttpRequest, HttpResponseInit } from '@azure/functions'
 
 export default class HelloController extends BaseController {

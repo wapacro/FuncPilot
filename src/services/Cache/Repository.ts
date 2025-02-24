@@ -1,6 +1,6 @@
 import type { Store } from './contracts.js'
 
-export class Repository {
+export default class Repository {
     public constructor(protected store: Store) {
     }
 

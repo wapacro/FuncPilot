@@ -1,7 +1,7 @@
 import type { Store } from './contracts.js'
 import NodeCache from 'node-cache'
 
-export class MemoryStore implements Store {
+export default class MemoryStore implements Store {
     protected cache: NodeCache
 
     public constructor() {

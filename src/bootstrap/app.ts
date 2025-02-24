@@ -1,6 +1,6 @@
-import { Container } from '../services/Container/Container.js'
-import { Route } from '../services/Route/Route.js'
-import { CacheManager } from '../services/Cache/CacheManager.js'
+import Container from '../services/Container/Container.js'
+import Route from '../services/Route/Route.js'
+import CacheManager from '../services/Cache/CacheManager.js'
 import registerApiRoutes from '../routes/api.js'
 
 (async function () {

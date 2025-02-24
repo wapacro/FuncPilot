@@ -1,8 +1,8 @@
 import { InvalidArguments } from './exceptions.js'
-import { Repository } from './Repository.js'
-import { MemoryStore } from './MemoryStore.js'
+import Repository from './Repository.js'
+import MemoryStore from './MemoryStore.js'
 
-export class CacheManager {
+export default class CacheManager {
     protected stores: { [key: string]: Repository } = {}
 
     /**

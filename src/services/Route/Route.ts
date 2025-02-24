@@ -1,7 +1,7 @@
 import type { RouteHandler, RouteOptions } from './contracts.js'
 import { app, HttpHandler, HttpMethod, HttpRequest, HttpResponseInit, InvocationContext } from '@azure/functions'
 
-export class Route {
+export default class Route {
     public route(pattern: string, methods: HttpMethod[], handler: RouteHandler, options?: RouteOptions): void {
         pattern = pattern.startsWith('/') ? pattern.substring(1) : pattern
         app.http(options?.name ?? this.getFunctionNameByRoute(pattern, methods), {
